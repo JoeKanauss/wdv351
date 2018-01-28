@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PayPal Subscribe</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="js/jquery-3.2.1.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script>
+$(document).ready(function(){
+	$("#newsletterDesc").tooltip({
+		content: "<h2>Lava Lovers' Lovely Newsletter</h2><p>Not enough lava in your life? Subscribe to Lava Lovers' Lovely Newsletter for only .99&cent; a year and get all the lava facts and stories you can handle!</p>",
+		items: "img",
+		show: {effect:"clip"},
+		hide: {effect:"clip"}
+	});
+	$("#membershipDesc").tooltip({
+		content: "<h2>Lava Lovers Membership</h2><p>Craving exclusive lava news? About to erupt from lack of exciting lava stories? Then become a Lava Lover Member for only $3.99 every 3-months!</p>",
+		items:"img",
+		show: {effect:"clip"},
+		hide: {effect:"clip"}
+	});
+
+});
+</script>
+
+<style>
+#areaContain{
+	width: 75%;
+	margin: 0 auto;
+}
+.area{
+	width: 45%;
+	float: left;
+	border: .5em double #a964e5;
+	background-color: white;
+	margin: 1%;
+	padding-bottom: 3%;
+}
+.area h2{
+	color: #55c0ba;
+}
+.clear{
+	clear: both;
+}
+
+img{
+	width: 75%;
+}
+</style>
+
+</head>
+<body>
+<div id="contain">
+<h1>PayPal Subscribe</h1>
+<h2>"Lava Lovers" loves lava! Share your love for the hot, runny stuff with us, and let us share ours with you!</h2>
+<p>We at Lava Lovers want to share our love of lava with you, and now, with PayPal, we can! Subscribe to our Lava Lovers' Lovely Newsletter for fun and exciting information on lava, and get more amazing, member-only lava facts, stories, and products by becoming a Lava Lover today!
+
+<div id="areaContain">
+<div class="area">
+<h2>Lava Lovers' Lovely Newsletter</h2>
+<p><img src="lava.jpg" id="newsletterDesc"/></p>
+
+<!-- 1-YEAR .99 CENT NEWSLETTER SUBSCRIPTION BUTTON -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="MGZZTLR4FLF5L">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</form>
+</div>
+
+<div class="area">
+<h2>Lava Lovers' Membership</h2>
+<p><img src="lava2.jpg" id="membershipDesc" /></p>
+
+<!-- 3 MONTH $3.99 MEMBERSHIP SUBSCRIPTION BUTTON W/ USERNAME/PASSWORD ABILITY -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="H2WFBMRC6B3TJ">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</div>
+<div class="clear">
+</div>
+</div>
+</div>
+</body>
+</html>

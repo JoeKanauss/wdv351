@@ -1,0 +1,27 @@
+body{
+	background-image: url("memphisInspired.png");
+	font-family: Helvetica, sans-serif;
+}
+#contain {
+	width: 65%;
+	margin: 0 auto;
+	margin-top: 2%;
+	padding: 2%;
+	text-align: center;
+	background-color: rgba(256,256,256,.88);
+	border: .5em solid #f1c703;
+}
+input[type=text]{
+	border-radius: 10em;
+	padding: .25% 1%;
+}
+h1{
+	text-decoration: underline;
+}
+footer{
+	font-size: .75em;
+}
+footer a{
+	color: black;
+	text-decoration: none;
+}

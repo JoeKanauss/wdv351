@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PayPal Donate</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="js/jquery-3.2.1.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("input[type=radio][name=donation]").change(function(){
+		if( $("input[type=radio][name=donation]:checked").val() == "5")
+		{
+			$("#donation5").css("display","inline");
+			$("#donation10").css("display","none");
+			$("#donation20").css("display","none");
+		}
+		else
+		{
+			if( $("input[type=radio][name=donation]:checked").val() == "10")
+			{
+				$("#donation5").css("display","none");
+				$("#donation10").css("display","inline");
+				$("#donation20").css("display","none");
+			}
+			else
+			{
+				$("#donation5").css("display","none");
+				$("#donation10").css("display","none");
+				$("#donation20").css("display","inline");
+			}
+		}
+
+	});
+});
+</script>
+
+<style>
+#donation5{
+	display: none;
+}
+#donation10{
+	display: none;
+}
+#donation20{
+	display: none;
+}
+
+#tenSection, #chooseSection, #variableSection{
+	width: 20%;
+	height: 15em;
+	margin: 2%;
+	padding: .25em;
+	border: .25em solid #e4018c;
+	background-color: white;
+	float: left;
+}
+#tenSection{
+	margin-left: 13%;
+}
+#tenSection h1, #chooseSection h1, #variableSection h1{
+	color: #55c0ba;
+}
+#clear{
+	clear: both;
+}
+
+</style>
+</head>
+<body>
+<div id="contain">
+<h1>PayPal Donate</h1>
+
+
+<h3>A Good Organization  believes the world is the future, and we need your help to spread the news!</h3>
+<p>Every donation made to A Good Organization is a donation made to mankind! Your gift to us will go to educating children, ridding the atmosphere of pollution, planting trees, recycling, and feeding dogs and cats everywhere!</p>
+
+
+
+<div id="tenSection">
+<h1>$10.00</h1>
+<!-- 10 dollar donation -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="4FGUPL33NLXME">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<p>A $10.00 donation to A Good Organization is a wonderful thing!</p>
+</div>
+
+
+<div id="chooseSection">
+<h1>$5, $10, or $20</h1>
+
+<p><input type="radio" name="donation" value="5" />$5.00
+<input type="radio" name="donation" value="10" />$10.00
+<input type="radio" name="donation" value="20" />$20.00</p>
+
+<!-- 5 dollar donation -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="N2PCTS5EF6ADY">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+
+<!-- 10 dollar donation -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" id="donation10">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="4FGUPL33NLXME">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<!-- 20 dollar donation -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" id="donation20">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="W64PF5UB7P4KA">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<p>A 5-, 10-, or 20-dollar donation to A Good Organization helps a planet in need!</p>
+</div>
+
+<div id="variableSection">
+<h1>$???.??</h1>
+<!-- variable dollar donation -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="SSHCKLYDJ65T2">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<p>Any donation to A Good Organization, no matter how small or large, is always appreciated and always goes to a good cause!</p>
+</div>
+
+<div id="clear">
+</div>
+<p>NOTE: No actual business is recieving a donation. This is just a demonstration using PayPal Sandbox.</p>
+</div>
+</body>
+</html>

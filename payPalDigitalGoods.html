@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/cookieFunctions.js"></script>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<style>
+body{
+	text-align: center;
+	background-color: #558000;
+	font-family: sans-serif;
+}
+
+#container{
+	width: 75%;
+	margin: 0 auto;
+	padding: 1.5%;
+	background-color: #b36b00;
+	font-size: 1.5em;
+	border: .25em solid #662200;
+}
+
+</style>
+
+</head>
+<body>
+<h1>PayPal Digital Goods</h1>
+
+<div id="container">
+
+<p><img src="ttbhead.png" /></p>
+
+<p><em>A spookily good time for children of all ages!</em></p>
+
+<p>Make your Halloween even more fun with Tic-Tac-Boo!<br>
+This two-player game is easy to play!<br>
+Simply purchase, download, and follow the Instruction Sheet for a great time!</p>
+<h2><em>Only 75&cent;!</em></h2>
+
+<p><img src="tic-tac-booPreview.png" /></p>
+<div id="paypal-button-container"></div>
+
+
+<script>
+
+    // Render the PayPal button
+
+    paypal.Button.render({
+
+        // Set your environment
+
+        env: 'sandbox', // sandbox | production
+
+        // Specify the style of the button
+
+        style: {
+            label: 'paypal',
+            size:  'medium',    // small | medium | large | responsive
+            shape: 'rect',     // pill | rect
+            color: 'black',     // gold | blue | silver | black
+            tagline: false    
+        },
+
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+
+        client: {
+            sandbox:    'AVph6VDsh9AhLcxktOTRjkMmgH4ni0HXmKw0B-xUfhnsJoibiAIcaSCgDoGXqnNSgSpgw8ly1F-Ai7e7',
+            production: '<insert production client id>'
+        },
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '0.75', currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+		
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function() {
+               setCookie("purchased","purchased", 1);
+			   window.location = 'ppdgDelivery.html';
+            });
+        },
+		
+		onCancel: function(data, actions) {
+            window.location = 'ppdgCancel.html';
+        }
+
+    }, '#paypal-button-container');
+
+</script>
+
+</div>
+</body>

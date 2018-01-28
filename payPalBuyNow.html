@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PayPal Buy Now</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="js/jquery-3.2.1.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+$(document).ready(function(){
+	$(".pencilDesc").tooltip({
+		content: "<h2>Bunch-o'-Pencils</h2><p>Since 1902, Buncho-o'-Brand has been selling items in bulk for personal buyers. The Bunch-o'-Pencils product offers 150 #2 pencils in three beautiful colors.</p><p>With Bunch-o'-Pencils, never be without a writing instrument again!</p><h3>$5.00 + $1.99 shipping</h3>",
+		items: "img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	});
+	
+	$(".notebookDesc").tooltip({
+		content: "<h2>Chum'n'Pal's Notebook</h2><p>From the deepest valleys of Ecuador, the Chum'n'Pal company has been handmaking gorgeous notebooks since 1965.</p><p> With a cover made of genuine valley hare hide and with the ability to choose between three lining options for the inside pages, a writer's collection of resources is lacking without a Chum'n'Pal's notebook!</p><h3>$15.00 + $2.99 shipping</h3>",
+		items: "img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	});
+	
+	$(".highlighterDesc").tooltip({
+		content: "<h2>Harvey Liner's Highlighters</h2><p>Researcher and documentarian Harvey James Liner always found the usual highlighter to be lacking, so he invented his own.</p><p>Smudge-proof, acid-free, and non-eye-straining, Harvey Liner's Highlighters are available in four outstanding colors and are a must-have for any serious researcher!</p><h3>$10.00 + $1.99 shipping</h3>",
+		items: "img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	});
+});
+</script>
+
+<style>
+table{
+	margin: 0 auto;
+}
+.product{
+	width: 30%;
+	border: .45em solid #55c0ba;
+	margin: .25em;
+	float: left;
+	padding-bottom: 1em;
+	background-color: white;
+}
+.product h2{
+	color: #e4018c;
+}
+#left{
+	margin-left: 2%;
+}
+#clear{
+	clear: both;
+}
+img{
+	width: 75%;
+}
+
+</style>
+
+</head>
+<body>
+<div id="contain">
+<h1>PayPal Buy Now</h1>
+<!-- 
+	Fixed amounts of $5, $10 and $15 or more
+	Allow for at least three different purchase options
+-->
+
+
+<h2>Saliari's of Junction City sells only the three finest products for writers and students!</h2>
+<p>For 40 years Saliari's of Junction City has sold the finest products for writers and students all over the country. We distribute Bunch-o'-Pencils, Chum'n'Pal's Notebooks, and Harvey Liner's Highlighters! And now, using PayPal, you can purchase from Saliari's of Junction City from the comfort of your own home!</p>
+
+<div class="product" id="left">
+
+<h2>Bunch-o'-Pencils</h2>
+<p><img src="pencils.jpg" class="pencilDesc"/></p>
+
+<!-- Pencils -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="M96PREFXTFXJ8">
+<table>
+<tr><td><input type="hidden" name="on0" value="Color Options">Color Options</td></tr><tr><td><select name="os0">
+	<option value="Puce">Puce </option>
+	<option value="Purple">Purple </option>
+	<option value="Periwinkle Blue">Periwinkle Blue </option>
+</select> </td></tr>
+</table>
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</div>
+
+<div class="product">
+
+<h2>Chum'n'Pal's Notebook</h2>
+<p><img src="notebook.jpg" class="notebookDesc"/></p>
+
+<!-- Notebook -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="P2EQUZB5MQJAE">
+<table>
+<tr><td><input type="hidden" name="on0" value="Paper Lining Options">Paper Lining Options</td></tr><tr><td><select name="os0">
+	<option value="Unlined paper">Unlined paper </option>
+	<option value="Lined paper">Lined paper </option>
+	<option value="Grid paper">Grid paper </option>
+</select> </td></tr>
+</table>
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</div>
+
+<div class="product">
+
+<h2>Harvey Liner's Highlighters</h2>
+<p><img src="highlighter.jpg" class="highlighterDesc"/></p>
+
+<!-- Highlighters -->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="KUZMSMN5GKR96">
+<table>
+<tr><td><input type="hidden" name="on0" value="Highlighting Color">Highlighting Color</td></tr><tr><td><select name="os0">
+	<option value="Lemonade Yellow">Lemonade Yellow </option>
+	<option value="Citrus Orange">Citrus Orange </option>
+	<option value="Iceberg Blue">Iceberg Blue </option>
+	<option value="Lavender Field Purple">Lavender Field Purple </option>
+</select> </td></tr>
+</table>
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+</div>
+
+<div id="clear">
+</div>
+<p>NOTE: No actual business is selling any products. This is just a demonstration using PayPal Sandbox.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PayPal Add To Cart</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="js/jquery-3.2.1.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#pencilDesc").tooltip({
+		content: "<h2>Bunch-o'-Pencils</h2><p>Since 1902, Buncho-o'-Brand has been selling items in bulk for personal buyers. The Bunch-o'-Pencils product offers 150 #2 pencils in three beautiful colors.</p><p>With Bunch-o'-Pencils, never be without a writing instrument again!</p><p>Through Sell On Thru, Bunch-O'-Pencils can be bought in 150-, 300-, and 400-pencil orders!</p><h3>Pricing varies, see Order Options + $1.99 shipping</h3>",
+		items: "img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	});
+	
+	$("#notebookDesc").tooltip({
+		content: "<h2>Chum'n'Pal's Notebook</h2><p>From the deepest valleys of Ecuador, the Chum'n'Pal company has been handmaking gorgeous notebooks since 1965.</p><p> With a cover made of genuine valley hare hide and with the ability to choose between three lining options for the inside pages, a writer's collection of resources is lacking without a Chum'n'Pal's notebook!</p><p>Through Sell on Thru, Chum'n'Pal is offering free embossed messages on the front covers of their fabulous notebooks!</p><h3>$15.00 + $2.99 shipping</h3>",
+		items: "img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	});
+	
+	$("#highlighterDesc").tooltip({
+		content: "<h2>Harvey Liner's Highlighters</h2><p>Researcher and documentarian Harvey James Liner always found the usual highlighter to be lacking, so he invented his own.</p><p>Smudge-proof, acid-free, and non-eye-straining, Harvey Liner's Highlighters are available in four outstanding colors and are a must-have for any serious researcher!</p><h3>$10.00 + $1.99 shipping</h3>",
+		items: "img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	});
+	$("#potionDesc").tooltip({
+		content:"<h2>Simone Bernadette Magic Potion</h2><p> Simone Bernadette, distinguished professional magic potion crafter, has generously decided to work with Potions-R-Us to distribute three varieties of potion! All potions are guarranteed to work or you get a full refund!</p><p>NOTE: Potions-R-Us would like us to remind you that magic is illegal in the states of Iowa, New York, Texas, Alabama, California, Utah, and Pennsylvania.</p><h3>Pricing varies, see Order Options AND FREE SHIPPING!</h3> ",
+		items:"img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	})
+	$("#paperclipsDesc").tooltip({
+		content:"<h2>Run-O'-the-Mill Paperclips</h2><p>For 75 years, Run-O'-the-Mill Brand has been offering their basic home and office goods for low, low prices. There's nothing fancy here, folks: just well-crafted items that do the job!</><p>Run-O'-the-Mill Paperclips come in bunches of 100, with a variety of colors.</p><h3>$0.99 AND FREE SHIPPING!</h3>",
+		items:"img",
+		show: {effect:"blind"},
+		hide: {effect:"blind"}
+	})
+
+});
+
+</script>
+
+<style>
+form table{
+	margin: 0 auto;
+}
+form input[type=text]{
+	border-radius: 0;
+}
+.area{
+	width: 40%;
+	margin: 2.25em;
+	float: left;
+	border: .25em solid #55c0ba;
+	background-color: white;
+	padding-bottom: 2%;
+}
+.lastItem{
+	width: 40%;
+	margin: 0 auto;
+	clear: both;
+	border: .25em solid #55c0ba;
+	background-color: white;
+	padding-bottom: 2%;
+}
+.areaContain{
+	width: 80%;
+	margin-left: 10%;
+}
+.clear{
+	padding: 5%;
+	clear: both;
+}
+
+</style>
+</head>
+<body>
+<div id="contain">
+<h1>PayPal Add to Cart</h1>
+<h2>Sell On Thru is proud to present our latest partnership sale items!</h2>
+<p>Since 2014, Sell On Thru has been working with various companies to sell products with amazing add-ons and deals! This week's partnership sale comes from Bunch-O'-Brand, Chum'n'Pal, Harvey Liner Associates, Potions-R-Us, and Run-O'-the-Mill! Sell on Thru would like to thank these companies for working with us, and we'd like to thank you for shopping with us! Thank You!</p>  
+<!--
+	/Display 5 or more products or services on your page.  
+	/One or more products should have a fixed cost cost and information.
+	/One or more fields should provide a drop-down list for sizes, colors, package deals, etc.
+	/One or more products should have a drop-down list for different prices. 
+	/One or more fields should provide a text field that allows for customization of your product.  For example:  monograms, special messages, etc.
+	/Use the tax rate from your Seller's profile.
+	/Apply a shipping fee on one or more items.
+	/One or more items should not be charged shipping.
+	/Implement a View Cart button on your page.  
+-->
+
+<div class="areaContain">
+<p>
+<div class="area">
+<h2>Bunch-O'-Pencils</h2>
+<p><img src="pencils.jpg" id="pencilDesc"/></p>
+
+<!--Pencils (shipping; pricing options; options list)-->
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="JA2VWH7WLUVRA">
+<table>
+<tr><td><input type="hidden" name="on0" value="Pencil count">Pencil count</td></tr><tr><td><select name="os0">
+	<option value="150 Pencils">150 Pencils $5.00 USD</option>
+	<option value="300 Pencils">300 Pencils $8.00 USD</option>
+	<option value="450 Pencils">450 Pencils $14.75 USD</option>
+</select> </td></tr>
+<tr><td><input type="hidden" name="on1" value="Color Options">Color Options</td></tr><tr><td><select name="os1">
+	<option value="Puce">Puce </option>
+	<option value="Purple">Purple </option>
+	<option value="Periwinkle Blue">Periwinkle Blue </option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+
+<div class="area">
+<h2>Chum'n'Pal's Notebook</h2>
+<p><img src="notebook.jpg" id="notebookDesc" /></p>
+
+<!--Notebook (shipping; options list; text-field-->
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="N3W3X9CU5UT2G">
+<table>
+<tr><td><input type="hidden" name="on0" value="Paper Lining Options">Paper Lining Options</td></tr><tr><td><select name="os0">
+	<option value="Unlined paper">Unlined paper </option>
+	<option value="Lined paper">Lined paper </option>
+	<option value="Grid paper">Grid paper </option>
+</select> </td></tr>
+<tr><td><input type="hidden" name="on1" value="Front-Cover Embossing:">Front-Cover Embossing:</td></tr><tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+</table>
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+
+<div class="area">
+<h2>Harvey Liner's Highlighters</h2>
+<p><img src="highlighter.jpg" id="highlighterDesc" /></p>
+
+<!--Highlighters (shipping; options list-->
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="WWTJM7LBBX4TE">
+<table>
+<tr><td><input type="hidden" name="on0" value="Highlighting Color">Highlighting Color</td></tr><tr><td><select name="os0">
+	<option value="Lemonade Yellow">Lemonade Yellow </option>
+	<option value="Citrus Orange">Citrus Orange </option>
+	<option value="Iceberg Blue">Iceberg Blue </option>
+	<option value="Lavender Field Purple">Lavender Field Purple </option>
+</select> </td></tr>
+</table>
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+<br>
+
+<div class="area">
+<h2>Simone Bernadette Magic Potion</h2>
+<p><img src="potion.jpg" id="potionDesc" /></p>
+
+<!--potion (no shipping; pricing options)-->
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="BF6A5LGNZR9RA">
+<table>
+<tr><td><input type="hidden" name="on0" value="Potion Type">Potion Type</td></tr><tr><td><select name="os0">
+	<option value="Sleeping Potion">Sleeping Potion $30.00 USD</option>
+	<option value="Love Potion">Love Potion $50.00 USD</option>
+	<option value="Invisibility Potion">Invisibility Potion $100.00 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+</p>
+
+
+
+<div class="lastItem">
+<h2>Run-O'-the-Mill Paperclips</h2>
+<p><img src="paperclips.jpg" id="paperclipsDesc" /></p>
+
+<!--paperclips (no shipping; fixed cost/info)-->
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="7JMS6ZVLFLC2L">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+
+
+<div class="clear">
+
+<!--View Cart-->
+<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" >
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+</div>
+
+<p>NOTE: No business is selling anything here. This is only a demonstration using PayPal Sandbox</p>
+</div>
+</body>
+</html>

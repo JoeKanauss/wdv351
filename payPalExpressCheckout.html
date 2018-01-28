@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>PayPal Express Checkout</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<style>
+#product{
+	width: 50%;
+	margin: 0 auto;
+	padding-bottom: 2em;
+	border: .5em solid #55c0ba;
+	background-color: white;
+}
+img{
+	border: .35em solid #a964e5;
+
+}
+
+</style>
+</head>
+<body>
+<div id="contain">
+<h1>PayPal Express Checkout</h1>
+<div id="product">
+<h2>Home Cactus</h2>
+<p>A delightful, potted cactus for those who enjoy the spiky side of life!</p>
+<p><img src="cactus.jpg" /></p>
+<h3>$4.99</h3>
+
+    <div id="paypal-button-container"></div>
+    <script>
+        paypal.Button.render({
+
+            env: 'sandbox', // sandbox | production
+
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+                production: '<insert production client id>'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '4.99', currency: 'USD' }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+                    window.location = 'payPalExpressCheckoutConfirm.html';
+                });
+            }
+
+        }, '#paypal-button-container');
+
+    </script>
+	
+</div>
+<p>NOTE: No actual products are being sold here. This is simply a demonstration using PayPal Sandbox.</p>
+</div>
+</body>
+</html>

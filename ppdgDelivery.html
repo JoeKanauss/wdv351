@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/cookieFunctions.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	var purchased = getCookie("purchased");
+
+	if(purchased)
+	{
+		$(".headMessage").html('Here is your copy of "Tic-Tac-Boo"!');
+		$(".bodyMessage").html("Your copy of the game includes a Microsoft Word Document of the Instruction Sheet, a Pdf of the Instruction Sheet, and a .png image file of the gameboard and game pieces. A compressed file of the Pdf and image are also available to be downloaded. <strong> These downloads will be available for 1 day on the computer your purchased them from</strong>.");
+		$(".links").html("<a href='Tic-Tac-Boo Instruction Sheet.docx'>Instruction Sheet (Word)</a><br><a href='Tic-Tac-Boo Instruction Sheet.pdf'>Instruction Sheet (pdf)</a><br><a href='tic-tac-boo.png'>Gameboard and Pieces (png)</a><br><a href='Tic-Tac-Boo Kit.zip'>Instruction sheet and gameboard/pieces (zip)</a>");
+		$(".thankYou").html('Thank you for purchasing "Tic-Tac-Boo!"<br>We hope you have a safe and spooky Halloween!');
+	}
+	else
+	{
+		$(".headMessage").html("Uh-oh! It seems like you haven't purchased &ldquo;Tic-Tac-Boo&rdquo;");
+	}
+
+});
+</script>
+
+<style>
+body{
+	text-align: center;
+	background-color: #558000;
+	font-family: sans-serif;
+}
+
+#container{
+	width: 75%;
+	margin: 0 auto;
+	padding: 1.5%;
+	background-color: #b36b00;
+	font-size: 1.5em;
+	border: .25em solid #662200;
+}
+
+.ghost{
+	opacity: 0.5;
+}
+
+.ghost:hover{
+	opacity: 1;
+}
+
+a{
+	color: #4d194d;
+	font-weight: bold;
+}
+
+.thankYou{
+	font-weight: bold;
+}
+
+</style>
+
+</head>
+<body>
+<h1>PayPal Digital Goods</h1>
+
+<div id="container">
+<h2 class="headMessage"> Here is your copy of "Tic-Tac-Boo!"</h2>
+<p class="bodyMessage"></p>
+<p class="links"></p>
+<p class="thankYou"></p>
+<p>Follow the ghost back to the Store Page</p>
+<p><a href="payPalDigitalGoods.html"><img class="ghost" src="ghost.png" /></p>
+
+</div>
+</body>
